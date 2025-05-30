@@ -65,6 +65,13 @@ a {
   margin-bottom: 1.5rem; /* 24px */
   /* Placeholder background if image fails */
   background-color: var(--clr-neutral-grey-700);
+  border: 3px solid var(--clr-primary-green);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: box-shadow 0.3s;
+}
+
+.profile-picture:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
 }
 
 /* TODO: Replace '#' with actual image path when available */
@@ -87,7 +94,9 @@ a {
 }
 
 .profile-bio {
-  margin-bottom: 1.5rem; /* 24px */
+  margin-bottom: 2rem;
+  color: #d1d5db;
+  font-size: 1rem;
 }
 
 .social-links {
@@ -96,19 +105,29 @@ a {
 }
 
 .social-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   background-color: var(--clr-neutral-grey-700);
   color: var(--clr-neutral-white);
   font-weight: var(--fw-bold);
   padding: 0.75rem; /* 12px */
   border-radius: 0.5rem; /* 8px */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.social-link .icon {
+  display: flex;
+  align-items: center;
 }
 
 .social-link:hover,
 .social-link:focus {
   background-color: var(--clr-primary-green);
   color: var(--clr-neutral-grey-900);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
 
 .attribution {
@@ -126,6 +145,23 @@ a {
 @media (min-width: 1440px) {
   .profile-card {
     padding: 2.5rem; /* 40px */
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .profile-picture {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  .profile-name {
+    font-size: 1.2rem;
+  }
+  .profile-bio {
+    font-size: 0.95rem;
   }
 }
 
